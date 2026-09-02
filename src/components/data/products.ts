@@ -17,11 +17,26 @@ export interface GlassJarProduct {
   price2: number;
 }
 
-import dryFruitSattuImage from "../assets/dry_fruit_sattu_laddoo_product.jpg";
-import besanBadamImage from "../assets/besan_badam_laddoo_product.jpg";
-import datesDelightImage from "../assets/dates_delight_laddoo_product.jpg";
-import sattuLaddooImage from "../assets/sattu_laddoo_product.jpg";
+export interface Product {
+  id: number;
+  name: string;
+  tagline: string;
+  description: string;
+  price250: number;
+  price500: number;
+  image: string;
+}
 
+export interface GlassJarProduct {
+  id: number;
+  name: string;
+  size1: string;
+  price1: number;
+  size2: string;
+  price2: number;
+}
+
+// Using image paths that will work with Vite
 export const products: Product[] = [
   {
     id: 1,
@@ -31,7 +46,7 @@ export const products: Product[] = [
       "Roasted sattu — a grain Indian kitchens have trusted for generations as a natural source of strength and stamina — packed with real dry fruits and slow-cooked desi ghee, sweetened with iron-rich jaggery. Eat it for breakfast when you're rushing out the door. Eat it before a workout when you need real fuel, not a sugar spike.",
     price250: 250,
     price500: 500,
-    image: dryFruitSattuImage,
+    image: "/src/assets/dry_fruit_sattu_laddoo_product.jpg",
   },
 
   {
@@ -42,7 +57,7 @@ export const products: Product[] = [
       "Besan, slow-roasted until it turns nutty and golden. Almonds, for crunch. Desi ghee, for that unmistakable aroma the moment you open the box. Sweetened only with jaggery — because this laddoo doesn't need help pretending to be a childhood memory. It already is one.",
     price250: 215,
     price500: 430,
-    image: besanBadamImage,
+    image: "/src/assets/besan_badam_laddoo_product.jpg",
   },
 
   {
@@ -53,7 +68,7 @@ export const products: Product[] = [
       "Dates, crushed nuts, roasted seeds, and desi ghee — bound together with nothing but their own natural sweetness. Rich, chewy, a little smoky from the roasting. The kind of energy that doesn't crash by 5pm.",
     price250: 315,
     price500: 630,
-    image: datesDelightImage,
+    image: "/src/assets/dates_delight_laddoo_product.jpg",
   },
 
   {
@@ -64,7 +79,7 @@ export const products: Product[] = [
       "Long before protein powders and energy bars, Indian households had sattu — a humble grain built for exactly this: quiet, steady, natural energy. This laddoo brings it back, made honestly, with desi ghee and jaggery and absolutely nothing else hiding inside.",
     price250: 165,
     price500: 330,
-    image: sattuLaddooImage,
+    image: "/src/assets/sattu_laddoo_product.jpg",
   },
 ];
 
