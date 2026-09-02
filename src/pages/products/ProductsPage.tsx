@@ -42,14 +42,12 @@ function ProductsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [usingLocalData, setUsingLocalData] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
         setError('');
-        setUsingLocalData(false);
         const data = await getProducts();
         setProducts(data);
       } catch (err) {
@@ -57,7 +55,6 @@ function ProductsPage() {
         // Fallback to local products when API fails
         const transformedProducts = localProducts.map(transformLocalProduct);
         setProducts(transformedProducts);
-        setUsingLocalData(true);
       } finally {
         setLoading(false);
       }
